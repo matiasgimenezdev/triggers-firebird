@@ -663,7 +663,6 @@ BEGIN
     MES_ACTUAL = 1;
     WHILE (MES_ACTUAL <= 12) DO BEGIN
         SELECT COALESCE(SUM(IMPORTE), 0) FROM TBL_FACTURA F WHERE ((EXTRACT(YEAR FROM F.FECHA) = :ANIO) AND (EXTRACT(MONTH FROM F.FECHA) = :MES_ACTUAL)) INTO :TOTAL_VENTA_MES;
-        /*IF(TOTAL_VENTA_MES IS NULL) THEN TOTAL_VENTA_MES = 0;*/
         
         -- Asigna el valor al parametro de retorno correspondiente según el mes actual
         if(MES_ACTUAL = 1) THEN MES01 = TOTAL_VENTA_MES;
