@@ -408,7 +408,7 @@ RETURNS (
 AS
 BEGIN
     RESULTADO = -1;
-    IF(ACCION IN ('A', 'B', 'C')) THEN BEGIN
+    IF(ACCION IN ('A', 'B', 'C', 'a', 'b', 'c')) THEN BEGIN
         RESULTADO = 0;    
         IF(ACCION = 'A') THEN
             INSERT INTO TBL_PRODUCTO (DESCRIPCION, STOCK, PRECIO_BASE, PRECIO_COSTO) 
